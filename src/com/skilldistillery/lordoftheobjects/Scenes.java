@@ -9,7 +9,13 @@ public class Scenes {
 	
 	Scenes () {
 	}
-
+	public Scenes (String description, int numEnemies, int numFriends, int chileBags) {
+		this.description = description;
+		this.numEnemies = numEnemies;
+		this.numFriends = numFriends;
+		this.chileBags = chileBags; 
+	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -42,7 +48,11 @@ public class Scenes {
 		this.chileBags = chileBags;
 	}
 	
-	
+	public String getInfo() {
+		return "\nWelcome to " + getDescription() + ".\nThere are " + getNumEnemies() 
+		+ " Enemies here." + "\n And " + getNumFriends() 
+				+ " Friends\n And " + getChileBags() + " bags of Chiles available to rescue.";
+	}
 	
 	}
 	
