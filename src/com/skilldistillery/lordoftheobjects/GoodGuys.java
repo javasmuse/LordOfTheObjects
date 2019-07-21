@@ -8,7 +8,16 @@ public class GoodGuys extends Characters {
 
 		
 	}
-
+	
+	public GoodGuys (String nm, int xP, int hP, int lP, String say ) {
+		
+		saying = say; 
+		
+				
+	}
+	
+	
+	
 	public String getSaying() {
 		return saying;
 	}

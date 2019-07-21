@@ -7,10 +7,18 @@ public class Characters {
 	private int healPoints;
 	private int luckPoints;
 	
-	Characters () {
+	public Characters () {
 		
 	}
-
+	
+	public Characters ( String nm, int xP, int hP, int lP ) {
+		name = nm; 
+		expPoints = xP;
+		healPoints = hP;
+		luckPoints = lP;
+		
+	}
+	
 	public String getName() {
 		return name;
 	}
