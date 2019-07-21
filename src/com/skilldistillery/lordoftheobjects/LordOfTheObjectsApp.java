@@ -33,7 +33,7 @@ public class LordOfTheObjectsApp {
 		String name = kb.next();
 		System.out.println();
 		System.out.println(name + ", you’re enjoying green enchiladas at Sparky’s in Hatch, New Mexico, "
-				+ "\nwhen you over hear Elmer Fudd, a stuttering farmer explaining to the owner, there are no more Chiles to sell. \n"
+				+ "\nwhen you overhear Elmer Fudd, a local farmer explaining to the owner, there are no more Chiles to sell. \n"
 				+ "\n"
 				+ "Wait, it’s July, the Chile season just started, you think, how can there be no more Chiles? \n"
 				+ "\n" + "The owner looks sad." + "\n"
@@ -57,13 +57,13 @@ public class LordOfTheObjectsApp {
 		case "A":
 			System.out.println("\nIt's so sad. I don't know what I'm going to eat with no New Mexican Chiles. "
 					+ "\nThe ones from Colorado are too mild and limp. I'm too upset (sniff) but, if you want to save the Chiles "
-					+ "\nthere are friends here.");
+					+ "\nthere are friends here.\n");
 			break;
 		case "B":
-			System.out.println("\nIt's open season on Chile thieves! That wrascally wrabbit might help you.");
+			System.out.println("\nIt's open season on Chile thieves! That wrascally wrabbit might help you.\n"
+					+ "");
 			break;
 		case "C":
-			System.out.println("\nEh, What's Up, Doc? Do you want to go on a hunt to save the Chiles?");
 			break;
 		case "D":
 			System.out.println("\nWow, those sopapillas were delicious. Now I'm too stuffed to do anything.");
@@ -75,11 +75,12 @@ public class LordOfTheObjectsApp {
 	}
 
 	public static void secondChoice(Scanner kb) {
-		GoodGuys bugsBunny = new GoodGuys("Bugs Bunny", 2000, 100, 100, "What's Up Doc?");
-		System.out.println("\nWhat's Up Doc? \n" + "Want to save the Chiles?\n" + "I'm partial to carrots\n"
+		GoodGuys bugsBunny = new GoodGuys ("Bugs Bunny", 1000, 100, "What's up Doc?");
+		System.out.println(bugsBunny.getInfo());
+		
+		System.out.println("Want to go on a hunt save the Chiles?\n" + "I'm partial to carrots\n"
 				+ "Folks here though are despondent about the loss of their Chiles. They could use a hand getting them back.\n"
 				+ "You look like you need a guide? \n");
-		System.out.println("Meet your narrator / guide \n" + bugsBunny);
 		System.out.println(
 				"\n Would you like to go with Bugs Bunny? " + "\nOr would you like to go back and order the sopapillas?"
 						+ "\n press 1 for Bugs Bunny or 2 for Sopapillas");
