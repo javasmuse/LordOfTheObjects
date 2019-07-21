@@ -8,6 +8,7 @@ public class LordOfTheObjectsApp {
 	public static void main(String[] args) {
 
 		Scanner kb = new Scanner(System.in);
+		int[] points = new int[] { 0, 100 };
 
 		openGame(kb);
 
@@ -23,14 +24,61 @@ public class LordOfTheObjectsApp {
 
 		thirdChoice(kb);
 
-		sceneOne(kb);
+		fightScene(points);
+		int hP2 = points[1];// brings back variable
+		int exP2 = points[0];// brings back variable
+		if (hP2 < 1) {
+			Loose();
+		}
+		try { // a little delay for effect..............
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		sceneTwo(kb);
+		try { // a little delay for effect..............
+			TimeUnit.SECONDS.sleep(15);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		fightScene(points);
+		int hP3 = points[1];// brings back variable
+		int exP3 = points[0];// brings back variable
+		if (hP3 < 1) {
+			Loose();
+		}
+		try { // a little delay for effect..............
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		sceneThree(kb);
+
+		try { // a little delay for effect..............
+			TimeUnit.SECONDS.sleep(15);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		fightScene(points);
+		int hP4 = points[1];// brings back variable
+		int exP4 = points[0];// brings back variable
+		if (hP4 < 1) {
+			Loose();
+		}
+		try { // a little delay for effect..............
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		mesaVerdeFight(points);
 
 		kb.close();
 	}
 
 	public static void openGame(Scanner name) {
 		System.out.println("Hello, What's your name? ");
-		String name1 = name.next();
+		String name1 = name.nextLine();
 		System.out.println();
 		System.out.println(name1 + ", you’re enjoying green enchiladas at Sparky’s in Hatch, New Mexico, "
 				+ "\nwhen you overhear Elmer Fudd, a local farmer explaining to the owner, there are no more Chiles to sell. \n"
@@ -38,8 +86,8 @@ public class LordOfTheObjectsApp {
 				+ "Wait, it’s July, the Chile season just started, you think, how can there be no more Chiles? \n"
 				+ "\n" + "The owner looks sad." + "\n"
 				+ "\nPorky Pig is sitting at the table next to you and begins to cry. "
-				+ "\n“But, Chiles are my favorite.” \n" + "\n" + "It’s looking dire for New Mexican Chiles you think "
-				+ "\nas you take your last delicious bite of enchilada. \n" + "");
+				+ "\n“But, Chiles are my favorite.” \n" + "\n" + "It’s looking dire for New Mexican Chiles you think, "
+				+ "as you take your last delicious bite of enchilada. \n" + "");
 	}
 
 	public static void firstChoice(Scanner input) {
@@ -73,7 +121,7 @@ public class LordOfTheObjectsApp {
 	}
 
 	public static void secondChoice(Scanner kb) {
-		GoodGuys bugsBunny = new GoodGuys("Bugs Bunny", 1000, 100, "What's up Doc?");
+		GoodGuys bugsBunny = new GoodGuys("Bugs Bunny", 1000, 100, "Eh, What's up Doc?");
 		System.out.println(bugsBunny.getInfo());
 
 		System.out.println("Want to go on a hunt save the Chiles?\n" + "I'm partial to carrots\n"
@@ -93,7 +141,7 @@ public class LordOfTheObjectsApp {
 
 	public static void thirdChoice(Scanner kb) {
 		System.out.println(
-				"\nDoc, I think the best path is to Monument Valley. I heard of some folks carrying sacks of Chiles up there.");
+				"\nEh Doc, I think the best path is to Monument Valley. I heard of some folks carrying sacks of Chiles up there.");
 		tunneling();
 	}
 
@@ -104,38 +152,271 @@ public class LordOfTheObjectsApp {
 		} else {
 			Scenes monValley = new Scenes("the beautiful and dusty Monument Valley", 3, 2, 4);
 			System.out.println(monValley.getInfo());
+			sceneOne();
 		}
 	}
 
-	public static void turnABQ() {
-		System.out.println("Sorry, must've been that wrong turn in Albuquerque. We're in Santa Fe now.");
+	public static void turnABQ() { // bonus scene
+		Scanner kb = new Scanner(System.in);
+		System.out.println("\nSorry, must've been that wrong turn in Albuquerque. We're in Santa Fe now.\n");
 		Scenes santaFe = new Scenes("the oldest capital in the U.S. ", 3, 2, 5);
 		System.out.println(santaFe.getInfo());
+		System.out.println();
+		System.out.println("\nYou see the Tazmanian devil in the old plaza, terrorizing tourists.");
+		System.out.println("\nPepe le Phew is sitting on a bench wooing unsuspecting tourists.\n");
+		System.out.println("\nBugs Bunny wrinkles his nose at the sight of Pepe and says"
+				+ "\nEh, we don't want to get too close to Pepe and Taz isn't much for talking\n"
+				+ "let's look at the headlines on the newspaper.");
+		System.out.println("\n**** Santa Fe Journal **** Extra, Extra -- the Roswell Aliens are real."
+				+ "\n And their stealing our Chiles and taking them north.\n");
+		System.out.println("\n You catch a glimpse of some Aliens with a bag of Chiles heading out of town.");
+		System.out.println(
+				"Bugs Bunny say, 'Eh Doc, I think we still need to get to Monument Valley, but could you run grab"
+						+ "\n the Chiles from those Aliens first? I'll wait here. \n");
+		System.out.println(
+				"\n You think to youself, well I'd been hoping since we're here,\n I could pop into the Shed for a Silver Coin Margarita.");
+		System.out.println("Go after the Aliens (1) or pop into the Shed for a Margaritta? (2)");
+		int input = kb.nextInt();
+		kb.close();
+		if (input == 1) {
+			System.out.println("You run right past the the Shed in pursuit of the Aliens.\n");
+
+		} else {
+			System.out.println(
+					"Looks like a sip of the southwest won over adventure, luckily there's still plenty of tequilla.");
+			System.out.println(" Game Over - if you would like to play again re-run");
+			System.exit(0);
+		}
+
 	}
 
-	public static void sceneOne(Scanner input) {
+	public static void sceneOne() {
+		Scanner input = new Scanner(System.in);
 		System.out.println();
 		System.out.println("Looks like you can talk to some friends or battle some enemies.");
 		System.out.println(
 				"\nFoghorn Leghorn is by the big red rock. And the Road Runner just zipped past spiling Chiles out of a large sack");
 		System.out.println("\nThere are some funny looking green beings on top of the east mesa."
 				+ " Kinda looks like some folks from Roswell.");
-		System.out.println("\nBugs Bunny suggests, 'Maybe we talk to some friends first'"
+		System.out.println("\nBugs Bunny suggests, 'Eh, Doc, maybe we should talk to some friends first.'"
 				+ "\n\tWould you like to talk to Foghorn Leghorn (1) or catch up with the Road Runner? (2) ");
 		int input1 = input.nextInt();
 		if (input1 == 1) {
-			GoodGuys fogLeg = new GoodGuys(" Foghorn Leghorn ", 800, 80, " Well I say boy, ");
+			GoodGuys fogLeg = new GoodGuys(" Foghorn Leghorn ", 800, 80, " \nWell I say boy, ");
 			System.out.println(fogLeg.getInfo());
 			System.out.println("\nThe aliens from Roswell have been stealing Chiles right off the farms.");
-			System.out.println("\nBeen running north with them. ");
-			System.out.println("\nI'm trying to shake off this little chicken hawk or I'd help more.");
+			System.out.println("Been running north with them. ");
+			System.out.println("I'm trying to shake off this little chicken hawk or I'd help more.\n");
 		} else {
 			GoodGuys roadRun = new GoodGuys(" the Road Runner ", 900, 80, " Beep, Beep");
 			System.out.println(roadRun.getInfo());
 			System.out.println("\n Beep, Beep -- I'm trying to gather our Chiles from the thieving Aliens.");
-			System.out.println(
-					"\n Why do they want our Chiles, you ask? They're taking them to Colorado. \nBeep, Beep... gone.");
+			System.out.println("\n Why do the aliens want our Chiles, you ask? They're taking them to Colorado. \nBeep, Beep... gone.\n\n");
+		}
+		System.out.println("Bugs Bunny say's 'Eh Doc, I think you should go get the Chiles from those Roswell Aliens. Hmmm....?' "
+						+ "\nWe can't just take them, though, there might be a litle fight. I'll wait here for you.");
+		System.out.println("\nDo you want to go get the Chiles from the Roswell Aliens? (1) or are you thinking of those sopapillas or maybe even some fry bread (2)?");
+		int input3 = input.nextInt();
+		input.close();
+		if (input3 == 1) {
+			System.out.println("You hear cheering from a troupe of Looney Toons as you head up the east mesa to confront the Aliens.");
+			System.out.println("\nSAVE THE CHILES they shout! \n");
+
+		} else {
+			System.out.println("Looks like dessert won over adventure, luckily there's still plenty of sopapillas.");
+			System.out.println(" Game Over - if you would like to play again re-run");
+			System.exit(0);
+		}
+	}
+
+	public static void sceneTwo(Scanner input) {
+		System.out.println();
+		Scenes taos = new Scenes("Taos", 2, 2, 4);
+		System.out.println(taos.getInfo());
+		System.out.println("\n More like near Taos at the Rio Grande Gorge. Beautiful sweeping views of the little Rio Grande");
+		System.out.println("You see Tweety Bird flying over the canyon towards you. And near the rim you can hear Daffy Duck quacking at river");
+		GoodGuys tweetyB = new GoodGuys("Tweety", 400, 100, "I tawt, I taw an alien, I did, I did taw an alien!");
+		System.out.println("\n And he's right behind you! ");
+		System.out.println("As you turn to face the Alien, you hear the Looney Toons Cheer - \n SAVE THE CHILES\n");
+		System.out.println();
+	}
+
+	public static void sceneThree(Scanner input) {
+		
+		Scenes forCorners = new Scenes("Four Corners, you can stand on four states at once!", 2, 3, 4);
+		System.out.println(forCorners.getInfo());
+		System.out.println("\nYou see a coyote walking upright with a box from Acme.");
+		System.out.println("\nand in the distance the Road Runner is zipping along with trail of dust and a few dropped Chiles behind him.");
+		System.out.println("\n A large black and white cat is lounging in the Utah corner.");
+		System.out.println("\n Bugs Bunny says, 'we know the Chiles are being stolen and taken north, but to where and why?");
+		System.out.println("\n Eh Doc, Who do you think we should talk to?  Coyote '1' Road Runner '2' Cat '3'  ");
+		int input2 = input.nextInt();
+		if (input2 == 1) {
+			GoodGuys coyote = new GoodGuys("Wyle E. Coyote ", 200, 50, "Hands you a printed card with his name.");
+			System.out.println(coyote.getInfo());
+			System.out.println("\n I'd like to help. But I must set up secret Acme Alien trap first.");
+			System.out.println("\nIt's a rocket to take me to Mesa Verde, where their hiding our Chiles!");
+		} else if (input2 == 2) {
+			GoodGuys roadRun = new GoodGuys(" the Road Runner ", 900, 80, " Beep, Beep");
+			System.out.println(roadRun.getInfo());
+			System.out.println("\n Beep, Beep -- I'm trying to gather our Chiles from the thieving Aliens.");
+			System.out.println("\n Why do the aliens want our Chiles, you ask? They're taking them to Colorado. \nBeep, Beep... gone.\n\n");
+		} else {
+			GoodGuys sylvester = new GoodGuys("Sylvester", 500, 100, "Looking for Tweety");
+			System.out.println(sylvester.getInfo());
+			System.out.println("\nThe Aliens are taking our Chiles up to Marvin the Martian in Mesa Verde.");
+			System.out.println("\nI'd rather eat Tweety, have you seen him?");
+		}
+		System.out.println("\nBugs Bunny points out some Aliens standing the corner of Arizona, just past a fry bread stand.");
+		System.out.println("\nEh, Doc, I heard the tourists say, Marvin the Martian is behind the Chile thefts. He's fencing them to Colorado.");
+		System.out.println("\nThe Pueblo Chiles just aren't as good and they figured they could sell ours under their label this year.");
+		System.out.println("\nEveryone would think Colorado Chiles are the bomb and next year they get all the Chile sales and the Chile glory worldwide.");
+		System.out.println("\nWe can't let that happen, I'll wait here while you rough up those Aliens, and then we're off to Mesa Verde.");
+		System.out.println("\nYou wonder to yourself, why can't Bugs help a little big in the fight, but at least his tunnels from place to place are mostly good.");
+		System.out.println("\nDarn the fry bread smells good though. Go after the Aliens? (1) or Stop for fry bread (2) ");
+		int input3 = input.nextInt();
+		if (input3 == 2) {
+			System.out.println("Looks like dessert won over adventure, luckily there's still plenty of fry bread.");
+			System.out.println(" Game Over - if you would like to play again re-run");
+			System.exit(0);
+		} else {
 		}
 
 	}
+
+	public static int[] fightScene(int[] points) {
+
+		int R1, R2, R3, R4; // r1 & r2 is player rolling, r3 &r4 is bad guy rolling
+		int playerExp = points[0];
+		int playerH = points[1];
+		int bgH = 100;
+
+		do {
+			try { // a little delay for effect..............
+				TimeUnit.SECONDS.sleep(2);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println("You STRIKE at the Roswell Aliens!");
+			R1 = (int) (1 + (int) 5 * Math.random());
+			if (R1 < 2) { // no hit
+				System.out.println("\tYou MISSED!....");
+			} else {
+				R2 = (int) (1 + (int) 15 * Math.random());
+				System.out.println("\tYou GOT THEM!..  Aliens loose " + R2 + " Health points!");
+				bgH = bgH - R2;
+				if (bgH <= 0) {
+					playerExp = playerExp + 100;
+					playerH = playerH + 80;
+					System.out.println("\t\tAliens DIE... You and Bugs get to continue.");
+					System.out.println("\t\tYou get 100 bags of Chilis !!");
+					System.out.println("\t\t Your Health points are : " + playerH);
+					points[0] = playerExp;
+					points[1] = playerH;
+					return (points);
+				}
+			}
+			System.out.println("Aliens STRIKE at YOU!...");
+			R3 = (int) (1 + (int) 10 * Math.random());
+			if (R3 < 4) {
+				System.out.println("\tThey MISSED!... you :-) ");
+			} else {
+				R4 = (int) (1 + (int) 15 * Math.random());
+				System.out.println("\tThey Got A HIT on you.... You loose " + R4 + " Health points.");
+				playerH = playerH - R4;
+			}
+			System.out.println("YOUR HEALTH POINTS are: " + playerH);
+			if (playerH < 1) {
+				System.out.println("You have lost too many points and LOOSE GAME..");
+				Loose();
+			}
+		} while (playerH > 0 && bgH > 0);
+		points[0] = playerExp;
+		points[1] = playerH;
+		return (points);
+	}
+
+	private static void mesaVerdeFight(int[] points) {
+		int R1, R2, R3, R4;
+
+		int playerH = points[1];
+		int mMh = 500;
+
+		System.out.println("\nLow and Behold...  It's Yosemite Sam and Daffy Duck");
+		System.out.println("They have been watching as a lot of aliens have been smuggling");
+		System.out.println("in Chiles and know they come from Hatch.  They also saw Marvin the Martian flying around!");
+		System.out.println("They suggest you might want to eat some of those delicious Chiles");
+		System.out.println("you have been collecting to build up your HEALTH before");
+		System.out.println("you go up against Marvin the Martian....");
+		System.out.println("Bugs agrees and you eat some 'Chiles' to get your Health up..");
+		playerH = playerH + 250;
+		try { // a little delay for effect..............
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("After eating some Healthy Chiles you now have: " + playerH + " points.\n\n");
+		do {
+			System.out.println("You STRIKE at Marvin !!");
+			R1 = (int) (1 + (int) 10 * Math.random());
+			if (R1 < 5) { // no hit
+				System.out.println("\tYou MISSED!....");
+			} else {
+				R2 = (int) (10 + (int) 35 * Math.random());
+				System.out.println("\tYou GOT a HIT !..  Marvin looses " + R2 + " Health points!");
+				mMh = mMh - R2;
+				if (mMh <= 0) {
+					try { // a little delay for effect..............
+						TimeUnit.SECONDS.sleep(2);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					System.out.println("\t\tMarvin the Martian DIES... You and the Gang Won.");
+
+					WinBig();
+					break;
+				}
+			}
+			System.out.println("Marvin STRIKES at YOU!...");
+			R3 = (int) (1 + (int) 10 * Math.random());
+			if (R3 < 5) {
+				System.out.println("\tHe MISSED!... you :-) ");
+			} else {
+				R4 = (int) (10 + (int) 35 * Math.random());
+				System.out.println("\tHe Got A HIT on you.... You loose " + R4 + " Health points.");
+				playerH = playerH - R4;
+				try { // a little delay for effect..............
+					TimeUnit.SECONDS.sleep(2);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.println("YOUR HEALTH POINTS are: " + playerH + "\n\n");
+			if (playerH < 1) {
+				System.out.println("You have lost too many points and LOOSE GAME..");
+				LooseFinal();
+			}
+
+		} while (playerH > 0 && mMh > 0);
+
+	}
+
+	private static void LooseFinal() {
+		System.out.println("\n BAD NEWS.....\n Marvin the Martian wins and now the Evil Coloradians");
+		System.out.println(
+				"will pass New Mexican Chiles as their own and become famous for the BEST CHILES in the world\n\tMaybe you should avoid New Mexico ");
+		System.out.println("and hope Yosemite Sam doesn't fill your backside with lead....");
+
+	}
+
+	private static void WinBig() {
+		System.out.println("YOU SAVED THE DAY \n Cue the musis\nand bring out the chorus of Looney Tune Characters.........");
+
+	}
+
+	private static void Loose() {
+		System.out.println("Dude .. YOU LOST \nYou got beat by some LITTLE ROSWELL ALIENS!!");
+		System.out.println("Maybe it's best to avoid the Land of Enchantment for a while.....");
+	}
+
 }
