@@ -14,6 +14,9 @@ of loosing will be real, and randomness will be used to decide outcome.
 This is a Team Project that adds the potential for conflict amongst programmers and the
 rewards of collaboration.
 
+As designed the game could be expanded to include more user choices, more scenes, and allow for non-PRG / Extra characters 
+to fight along side 'Our Hero' by use of the class / Objects to define health points and experience points for all characters. 
+
 # Technologies Used:
 
 - Java
@@ -29,8 +32,7 @@ This two person team chose a rated G theme based on the old Looney Tunes cartoon
 The player interacts with them as some are friends who can help and others are enemies to defeat.
 The location is based on real life areas of the Four Corners States.  It starts in
 Hatch, New Mexico and ends in Mesa Verde, Colorado.  We also brought in some extra bad guys;
- namely some Roswell Aliens to help Marvin the Martian who is the villain in this
- story.
+namely some Roswell Aliens to help Marvin the Martian who is the villain in this story.
 
  # Lessons Learned:
 
