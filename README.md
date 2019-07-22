@@ -23,7 +23,7 @@ rewards of collaboration.
 - UML
 - Flow Diagram
 
-# Synapses:
+# Synopsis:
 
 This two person team chose a rated G theme based on the old Looney Tunes cartoons.
 The player interacts with them as some are friends who can help and others are enemies to defeat.
