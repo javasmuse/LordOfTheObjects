@@ -25,13 +25,9 @@ public class LordOfTheObjectsApp {
 		thirdChoice(kb);
 
 		fightScene(points);
-		int hP2 = points[1];// brings back variable
-//		int exP2 = points[0];// brings back variable
-		if (hP2 < 1) {
-//			Loose();
-		}
+		
 		try { // a little delay for effect..............
-			TimeUnit.SECONDS.sleep(3);
+			TimeUnit.SECONDS.sleep(5);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -43,31 +39,23 @@ public class LordOfTheObjectsApp {
 			e.printStackTrace();
 		}
 		fightScene(points);
-		int hP3 = points[1];// brings back variable
-//		int exP3 = points[0];// brings back variable
-		if (hP3 < 1) {
-//			Loose();
-		}
+		
 		try { // a little delay for effect..............
-			TimeUnit.SECONDS.sleep(3);
+			TimeUnit.SECONDS.sleep(5);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
 		sceneThree();
 		try { // a little delay for effect..............
-			TimeUnit.SECONDS.sleep(15);
+			TimeUnit.SECONDS.sleep(20);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		fightScene(points);
-		int hP4 = points[1];// brings back variable
-//		int exP4 = points[0];// brings back variable
-		if (hP4 < 1) {
-//			Loose();
-		}
+
 		try { // a little delay for effect..............
-			TimeUnit.SECONDS.sleep(3);
+			TimeUnit.SECONDS.sleep(20);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
