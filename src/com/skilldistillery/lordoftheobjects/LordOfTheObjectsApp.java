@@ -26,9 +26,9 @@ public class LordOfTheObjectsApp {
 
 		fightScene(points);
 		int hP2 = points[1];// brings back variable
-		int exP2 = points[0];// brings back variable
+//		int exP2 = points[0];// brings back variable
 		if (hP2 < 1) {
-			Loose();
+//			Loose();
 		}
 		try { // a little delay for effect..............
 			TimeUnit.SECONDS.sleep(3);
@@ -44,17 +44,17 @@ public class LordOfTheObjectsApp {
 		}
 		fightScene(points);
 		int hP3 = points[1];// brings back variable
-		int exP3 = points[0];// brings back variable
+//		int exP3 = points[0];// brings back variable
 		if (hP3 < 1) {
-			Loose();
+//			Loose();
 		}
 		try { // a little delay for effect..............
 			TimeUnit.SECONDS.sleep(3);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		sceneThree(kb);
 
+		sceneThree();
 		try { // a little delay for effect..............
 			TimeUnit.SECONDS.sleep(15);
 		} catch (InterruptedException e) {
@@ -62,9 +62,9 @@ public class LordOfTheObjectsApp {
 		}
 		fightScene(points);
 		int hP4 = points[1];// brings back variable
-		int exP4 = points[0];// brings back variable
+//		int exP4 = points[0];// brings back variable
 		if (hP4 < 1) {
-			Loose();
+//			Loose();
 		}
 		try { // a little delay for effect..............
 			TimeUnit.SECONDS.sleep(3);
@@ -166,15 +166,14 @@ public class LordOfTheObjectsApp {
 		System.out.println("\nPepe le Phew is sitting on a bench wooing unsuspecting tourists.\n");
 		System.out.println("\nBugs Bunny wrinkles his nose at the sight of Pepe and says"
 				+ "\nEh, we don't want to get too close to Pepe and Taz isn't much for talking\n"
-				+ "let's look at the headlines on the newspaper.");
+				+ "Let's look at the headlines on the newspaper.");
 		System.out.println("\n**** Santa Fe Journal **** Extra, Extra -- the Roswell Aliens are real."
 				+ "\n And their stealing our Chiles and taking them north.\n");
 		System.out.println("\n You catch a glimpse of some Aliens with a bag of Chiles heading out of town.");
+		System.out.println("Bugs Bunny says, 'Eh Doc, I think we need to move along, but could you run grab"
+				+ "\n the Chiles from those Aliens first? I'll wait here. \n");
 		System.out.println(
-				"Bugs Bunny say, 'Eh Doc, I think we still need to get to Monument Valley, but could you run grab"
-						+ "\n the Chiles from those Aliens first? I'll wait here. \n");
-		System.out.println(
-				"\n You think to youself, well I'd been hoping since we're here,\n I could pop into the Shed for a Silver Coin Margarita.");
+				"\n You think to youself, well I'd been hoping since we're here, I could pop into the Shed for a Silver Coin Margarita.");
 		System.out.println("Go after the Aliens (1) or pop into the Shed for a Margaritta? (2)");
 		int input = kb.nextInt();
 		kb.close();
@@ -211,15 +210,19 @@ public class LordOfTheObjectsApp {
 			GoodGuys roadRun = new GoodGuys(" the Road Runner ", 900, 80, " Beep, Beep");
 			System.out.println(roadRun.getInfo());
 			System.out.println("\n Beep, Beep -- I'm trying to gather our Chiles from the thieving Aliens.");
-			System.out.println("\n Why do the aliens want our Chiles, you ask? They're taking them to Colorado. \nBeep, Beep... gone.\n\n");
+			System.out.println(
+					"\n Why do the aliens want our Chiles, you ask? They're taking them to Colorado. \nBeep, Beep... gone.\n\n");
 		}
-		System.out.println("Bugs Bunny say's 'Eh Doc, I think you should go get the Chiles from those Roswell Aliens. Hmmm....?' "
+		System.out.println(
+				"Bugs Bunny say's 'Eh Doc, I think you should go get the Chiles from those Roswell Aliens. Hmmm....?' "
 						+ "\nWe can't just take them, though, there might be a litle fight. I'll wait here for you.");
-		System.out.println("\nDo you want to go get the Chiles from the Roswell Aliens? (1) or are you thinking of those sopapillas or maybe even some fry bread (2)?");
+		System.out.println(
+				"\nDo you want to go get the Chiles from the Roswell Aliens? (1) or are you thinking of those sopapillas or maybe even some fry bread (2)?");
 		int input3 = input.nextInt();
 		input.close();
 		if (input3 == 1) {
-			System.out.println("You hear cheering from a troupe of Looney Toons as you head up the east mesa to confront the Aliens.");
+			System.out.println(
+					"You hear cheering from a troupe of Looney Toons as you head up the east mesa to confront the Aliens.");
 			System.out.println("\nSAVE THE CHILES they shout! \n");
 
 		} else {
@@ -231,58 +234,52 @@ public class LordOfTheObjectsApp {
 
 	public static void sceneTwo(Scanner input) {
 		System.out.println();
-		Scenes taos = new Scenes("Taos", 2, 2, 4);
+		Scenes taos = new Scenes("Rio Grande Gorge", 2, 2, 4);
 		System.out.println(taos.getInfo());
-		System.out.println("\n More like near Taos at the Rio Grande Gorge. Beautiful sweeping views of the little Rio Grande");
-		System.out.println("You see Tweety Bird flying over the canyon towards you. And near the rim you can hear Daffy Duck quacking at river");
+		System.out.println("\nBeautiful sweeping views of the little Rio Grande");
+		System.out.println(
+				"You see Tweety Bird flying over the canyon towards you. And near the rim you can hear Daffy Duck quacking at the river");
+		System.out.println();
+		System.out.println();
 		GoodGuys tweetyB = new GoodGuys("Tweety", 400, 100, "I tawt, I taw an alien, I did, I did taw an alien!");
-		System.out.println("\n And he's right behind you! ");
-		System.out.println("As you turn to face the Alien, you hear the Looney Toons Cheer - \n SAVE THE CHILES\n");
+		System.out.println(tweetyB.getInfo());
+		System.out.println("And he's right behind you! ");
+		System.out.println("\nAs you turn to face the Alien, you hear the Looney Toons Cheer - \n SAVE THE CHILES\n");
 		System.out.println();
 	}
 
-	public static void sceneThree(Scanner input) {
-		
-		Scenes forCorners = new Scenes("Four Corners, you can stand on four states at once!", 2, 3, 4);
+	public static void sceneThree() {
+		System.out.println();
+		Scenes forCorners = new Scenes("Four Corners", 2, 3, 4);
 		System.out.println(forCorners.getInfo());
-		System.out.println("\nYou see a coyote walking upright with a box from Acme.");
-		System.out.println("\nand in the distance the Road Runner is zipping along with trail of dust and a few dropped Chiles behind him.");
-		System.out.println("\n A large black and white cat is lounging in the Utah corner.");
-		System.out.println("\n Bugs Bunny says, 'we know the Chiles are being stolen and taken north, but to where and why?");
-		System.out.println("\n Eh Doc, Who do you think we should talk to?  Coyote '1' Road Runner '2' Cat '3'  ");
-		int input2 = input.nextInt();
-		if (input2 == 1) {
-			GoodGuys coyote = new GoodGuys("Wyle E. Coyote ", 200, 50, "Hands you a printed card with his name.");
-			System.out.println(coyote.getInfo());
-			System.out.println("\n I'd like to help. But I must set up secret Acme Alien trap first.");
-			System.out.println("\nIt's a rocket to take me to Mesa Verde, where their hiding our Chiles!");
-		} else if (input2 == 2) {
-			GoodGuys roadRun = new GoodGuys(" the Road Runner ", 900, 80, " Beep, Beep");
-			System.out.println(roadRun.getInfo());
-			System.out.println("\n Beep, Beep -- I'm trying to gather our Chiles from the thieving Aliens.");
-			System.out.println("\n Why do the aliens want our Chiles, you ask? They're taking them to Colorado. \nBeep, Beep... gone.\n\n");
-		} else {
-			GoodGuys sylvester = new GoodGuys("Sylvester", 500, 100, "Looking for Tweety");
-			System.out.println(sylvester.getInfo());
-			System.out.println("\nThe Aliens are taking our Chiles up to Marvin the Martian in Mesa Verde.");
-			System.out.println("\nI'd rather eat Tweety, have you seen him?");
-		}
-		System.out.println("\nBugs Bunny points out some Aliens standing the corner of Arizona, just past a fry bread stand.");
-		System.out.println("\nEh, Doc, I heard the tourists say, Marvin the Martian is behind the Chile thefts. He's fencing them to Colorado.");
-		System.out.println("\nThe Pueblo Chiles just aren't as good and they figured they could sell ours under their label this year.");
-		System.out.println("\nEveryone would think Colorado Chiles are the bomb and next year they get all the Chile sales and the Chile glory worldwide.");
-		System.out.println("\nWe can't let that happen, I'll wait here while you rough up those Aliens, and then we're off to Mesa Verde.");
-		System.out.println("\nYou wonder to yourself, why can't Bugs help a little big in the fight, but at least his tunnels from place to place are mostly good.");
-		System.out.println("\nDarn the fry bread smells good though. Go after the Aliens? (1) or Stop for fry bread (2) ");
-		int input3 = input.nextInt();
-		if (input3 == 2) {
-			System.out.println("Looks like dessert won over adventure, luckily there's still plenty of fry bread.");
-			System.out.println(" Game Over - if you would like to play again re-run");
-			System.exit(0);
-		} else {
-		}
 
-	}
+		System.out.println("\nYou see a coyote walking upright with an Acme box \n and a large black and white cat lounging in the Utah corner.\n");
+		System.out.println("Bugs Bunny says, we know the Chiles are being stolen and taken north, but to where and why?");
+		System.out.println();
+		GoodGuys coyote = new GoodGuys("Wyle E. Coyote", 200, 50, "Hands you a printed card with his name.");
+		System.out.println(coyote.getInfo());
+		System.out.println("I'd like to help, but I must set up my secret Acme Alien trap first.");
+		System.out.println("Hee, hee, I've got a rocket to blast us right to Mesa Verde, where their hiding our Chiles!");
+		System.out.println();
+		GoodGuys sylvester = new GoodGuys("Sylvester", 500, 100, "Looking for Tweety");
+		System.out.println(sylvester.getInfo());
+		System.out.println("The Aliens are taking our Chiles up to Marvin the Martian in Mesa Verde.");
+		System.out.println("I'd rather eat Tweety. Have you seen him?");
+		System.out.println(
+				"\nBugs Bunny points out some Aliens standing on the corner of Arizona, just past a fry bread stand");
+		System.out.println(
+				"Eh, Doc, I heard the tourists say, Marvin the Martian is behind the Chile thefts. He's fencing them to Colorado.");
+		System.out.println(
+				"The Pueblo Chiles just aren't as good and they figured they could sell ours under their label this year.");
+		System.out.println(
+				"Then everyone will think Colorado Chiles are the bomb and next year Colorado will get all the Chile sales and Chile glory worldwide.");
+		System.out.println(
+				"\nWe can't let that happen, I'll wait here while you rough up those Aliens, and they we're off to Mesa Verde");
+		System.out.println(
+				"\nDarn the fry bread smells good though. Not now though. Going after the Aliens.  ");
+		System.out.println("\nSuddenly the troupe of Looney Toons appears and cheers -- SAVE THE CHILES\n");
+		}
+	
 
 	public static int[] fightScene(int[] points) {
 
@@ -351,7 +348,7 @@ public class LordOfTheObjectsApp {
 		System.out.println("Bugs agrees and you eat some 'Chiles' to get your Health up..");
 		playerH = playerH + 250;
 		try { // a little delay for effect..............
-			TimeUnit.SECONDS.sleep(2);
+			TimeUnit.SECONDS.sleep(5);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -406,17 +403,23 @@ public class LordOfTheObjectsApp {
 		System.out.println(
 				"will pass New Mexican Chiles as their own and become famous for the BEST CHILES in the world\n\tMaybe you should avoid New Mexico ");
 		System.out.println("and hope Yosemite Sam doesn't fill your backside with lead....");
+		System.out.println(" Game Over - if you would like to play again re-run");
+		System.exit(0);
 
 	}
 
 	private static void WinBig() {
-		System.out.println("YOU SAVED THE DAY \n Cue the musis\nand bring out the chorus of Looney Tune Characters.........");
+		System.out.println(
+				"YOU SAVED THE DAY \n Cue the music\nand bring out the chorus of Looney Tune Characters.........");
 
 	}
 
 	private static void Loose() {
 		System.out.println("Dude .. YOU LOST \nYou got beat by some LITTLE ROSWELL ALIENS!!");
 		System.out.println("Maybe it's best to avoid the Land of Enchantment for a while.....");
+		System.out.println("\n Game Over - if you would like to play again re-run");
+		System.exit(0);
+		;
 	}
 
 }
